@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact Us
+{% endblock title %}
+
+{% block body %}
+
+<img src="https://source.unsplash.com/1349x300/?coding" alt="contact img">
+<!-- <img src="static\contact1.jpg" alt="contact img"> -->
+
+<div class="container">
+    <h3 class="text-center my-4"><b>Contact Us</b></h3>
+    <form method="post" action="/contact/">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Your name here">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="(Np)+977 9800001010">
+        </div>
+        <div class="form-group">
+            <label for="desc">Enter what you want to contact us for..?</label>
+            <textarea name="desc" class="form-control" id="desc" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<div class="container">
+    <p class="mt-5 mb-3 text-muted">&copy; Bishal Ice-Creams (+9779826614020)</p>
+</div>
+{% endblock body %}
